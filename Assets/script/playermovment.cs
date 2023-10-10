@@ -41,12 +41,12 @@ public class playermovment : MonoBehaviour
 
         if (Mathf.Abs(rd.velocity.x) > 0.1f || Mathf.Abs(rd.velocity.y) > 0.1f)
         {
-            MovPlayer.SetFloat("ismov", 1f);
+            MovPlayer.SetFloat("movplayer", 1f);
 
         }
         else
         {
-            MovPlayer.SetFloat("ismov", 0f);
+            MovPlayer.SetFloat("movplayer", 0f);
         }
 
         if (rd.velocity.x < 0)
