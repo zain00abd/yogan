@@ -13,11 +13,15 @@ public class playermovment : MonoBehaviour
     [SerializeField] public KeyCode down;
     [SerializeField] public KeyCode left;
     [SerializeField] public KeyCode right;
+    [SerializeField] public Animator MovPlayer;
 
-     float speed = 10f;
+    [SerializeField] public float speed;
+
+    SpriteRenderer play;
     // Start is called before the first frame update
     void Start()
     {
+        play = GetComponentInChildren<SpriteRenderer>();
         
     }
 
@@ -26,26 +30,33 @@ public class playermovment : MonoBehaviour
     {
          herozintal = Input.GetAxis("Horizontal");
          vertecal = Input.GetAxis("Vertical");
-        /*if (Input.GetKey(up))
-        {
-            player.transform.Translate(0, -0.01f, 0);
-        }
-        if (Input.GetKey(down))
-        {
-            player.transform.Translate(0, 0.01f, 0);
-        }
-        if (Input.GetKey(left))
-        {
-            player.transform.Translate(0.01f, 0, 0);
-        }
-        if (Input.GetKey(right))
-        {
-            player.transform.Translate(-0.01f, 0, 0);
-        }*/
 
+
+
+    }
+    private void FixedUpdate()
+    {
         rd.velocity = new Vector2(herozintal * speed, vertecal * speed);
 
-        Debug.Log(herozintal);
 
+        if (Mathf.Abs(rd.velocity.x) > 0.1f || Mathf.Abs(rd.velocity.y) > 0.1f)
+        {
+            MovPlayer.SetFloat("ismov", 1f);
+
+        }
+        else
+        {
+            MovPlayer.SetFloat("ismov", 0f);
+        }
+
+        if (rd.velocity.x < 0)
+        {
+            play.flipX = true;
+        }
+        else if (rd.velocity.x > 0)
+        {
+            play.flipX = false;
+
+        }
     }
 }
