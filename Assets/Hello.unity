@@ -297,7 +297,7 @@ Tilemap:
   - first: {x: -17, y: -6, z: 0}
     second:
       serializedVersion: 2
-<<<<<<< Updated upstream
+
       m_TileIndex: 0
       m_TileSpriteIndex: 0
       m_TileMatrixIndex: 0
@@ -5303,7 +5303,7 @@ Tilemap:
     e32: 0
     e33: 1
 --- !u!1 &1183339403
-=======
+
       x: 0
       y: 0
       width: 4
@@ -5362,7 +5362,7 @@ Transform:
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1163695550
->>>>>>> Stashed changes
+
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5802,10 +5802,10 @@ SceneRoots:
   - {fileID: 1556695867}
   - {fileID: 1288262521}
   - {fileID: 9015005}
-<<<<<<< Updated upstream
+
   - {fileID: 1183339404}
   - {fileID: 1425071644}
-=======
+
   - {fileID: 898587279}
   - {fileID: 1163695551}
->>>>>>> Stashed changes
+
