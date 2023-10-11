@@ -7,7 +7,6 @@ public class playermovment : MonoBehaviour
     float herozintal;
     float vertecal;
 
-    [SerializeField] public Transform player;
     [SerializeField] public Rigidbody2D rd;
     [SerializeField] public KeyCode up;
     [SerializeField] public KeyCode down;
