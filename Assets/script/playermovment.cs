@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class playermovment : MonoBehaviour
 {
@@ -13,6 +14,10 @@ public class playermovment : MonoBehaviour
     [SerializeField] public KeyCode left;
     [SerializeField] public KeyCode right;
     [SerializeField] public Animator MovPlayer;
+    [SerializeField] public GameObject Wapon1;
+    [SerializeField] public Transform Hand1;
+
+    Transform head;
 
     [SerializeField] public float speed;
 
@@ -30,7 +35,7 @@ public class playermovment : MonoBehaviour
          herozintal = Input.GetAxis("Horizontal");
          vertecal = Input.GetAxis("Vertical");
 
-
+        head = GetComponentInParent<Transform>();
 
     }
     private void FixedUpdate()
@@ -56,6 +61,17 @@ public class playermovment : MonoBehaviour
         {
             play.flipX = false;
 
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Wapon1"))
+        {
+            Debug.Log("zain");
+            GameObject par1 = Instantiate(Wapon1);
+            par1.transform.SetParent(head);
+            Destroy(collision.gameObject);
         }
     }
 }
