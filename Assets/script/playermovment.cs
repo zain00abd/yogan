@@ -16,8 +16,9 @@ public class playermovment : MonoBehaviour
     [SerializeField] public Animator MovPlayer;
     [SerializeField] public GameObject Wapon1;
     [SerializeField] public Transform Hand1;
+    [SerializeField] public Transform  camer;
 
-    Transform head;
+    Transform tran;
 
     [SerializeField] public float speed;
 
@@ -26,6 +27,7 @@ public class playermovment : MonoBehaviour
     void Start()
     {
         play = GetComponentInChildren<SpriteRenderer>();
+        tran = GetComponentInChildren<Transform>();
         
     }
 
@@ -35,7 +37,6 @@ public class playermovment : MonoBehaviour
          herozintal = Input.GetAxis("Horizontal");
          vertecal = Input.GetAxis("Vertical");
 
-        head = GetComponentInParent<Transform>();
 
     }
     private void FixedUpdate()
@@ -55,12 +56,13 @@ public class playermovment : MonoBehaviour
 
         if (rd.velocity.x < 0)
         {
-            play.flipX = true;
+            transform.Find("body").rotation = Quaternion.Euler(0, 160, 0);
+            camer.rotation = Quaternion.Euler(0, 0, 0);
         }
         else if (rd.velocity.x > 0)
         {
-            play.flipX = false;
-
+            transform.Find("body").rotation = Quaternion.Euler(0, 0, 0);
+            camer.rotation = Quaternion.Euler(0, 0, 0);
         }
     }
 
@@ -70,7 +72,8 @@ public class playermovment : MonoBehaviour
         {
             Debug.Log("zain");
             GameObject par1 = Instantiate(Wapon1);
-            par1.transform.SetParent(head);
+            par1.transform.SetParent(Hand1);
+            par1.transform.position = new Vector3(Hand1.position.x, Hand1.position.y);
             Destroy(collision.gameObject);
         }
     }
