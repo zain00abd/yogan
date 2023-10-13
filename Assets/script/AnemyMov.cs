@@ -6,8 +6,8 @@ public class AnemyMov1 : MonoBehaviour
 {
     private Transform tran;
     private SpriteRenderer Sr;
-    public float moveSpeed = 3f; // ÓÑÚÉ ÇáÍÑßÉ ááÚÏæ
-    [SerializeField] public Transform player; // ãÑÌÚ ááÇÚÈ
+    public float moveSpeed = 3f; 
+    [SerializeField] public Transform player; 
 
     Animator anim;
 
@@ -24,12 +24,12 @@ public class AnemyMov1 : MonoBehaviour
     {
         if (player == null)
         {
-            player = GameObject.FindGameObjectWithTag("Player").transform; // ÊÍÏíÏ ãæŞÚ ÇááÇÚÈ ÅĞÇ áã íßä ãæÌæÏğÇ
+            player = GameObject.FindGameObjectWithTag("Player").transform; 
         }
 
         if (player != null)
         {
-            Vector2 moveDirection = (player.position - transform.position).normalized; // ÊæÌíå ÇáÍÑßÉ äÍæ ÇááÇÚÈ
+            Vector2 moveDirection = (player.position - transform.position).normalized; 
             Vector2 movement = moveDirection * moveSpeed * Time.deltaTime;
 
             transform.Translate(movement);

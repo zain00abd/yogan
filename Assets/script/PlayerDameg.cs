@@ -9,10 +9,12 @@ public class PlayerDameg : MonoBehaviour
 {
 
     CircleCollider2D Atac;
+    SpriteRenderer sprite;
     // Start is called before the first frame update
     void Start()
     {
         Atac = GetComponent<CircleCollider2D>();
+        sprite = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -23,6 +25,12 @@ public class PlayerDameg : MonoBehaviour
             Atac.enabled = true;
             StartCoroutine(Atacnow());
         }
+
+        if(transform.Find("body").GetComponent<SpriteRenderer>().flipX = true)
+        {
+            sprite.flipX = true;
+        }
+      
     }
 
     IEnumerator Atacnow()
