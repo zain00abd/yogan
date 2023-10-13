@@ -6,6 +6,8 @@ TagManager:
   tags:
   - EnemyLayer
   - Wapon1
+  - Anim1
+  - WaponA1
   layers:
   - Default
   - TransparentFX
