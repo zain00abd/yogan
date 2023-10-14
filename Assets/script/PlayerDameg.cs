@@ -26,10 +26,6 @@ public class PlayerDameg : MonoBehaviour
             StartCoroutine(Atacnow());
         }
 
-        if(transform.Find("body").GetComponent<SpriteRenderer>().flipX = true)
-        {
-            sprite.flipX = true;
-        }
       
     }
 
