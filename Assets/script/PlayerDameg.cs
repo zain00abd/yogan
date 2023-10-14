@@ -20,7 +20,7 @@ public class PlayerDameg : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButton(0))
+        if(Input.GetMouseButtonDown(0))
         {
             Atac.enabled = true;
             StartCoroutine(Atacnow());
@@ -31,7 +31,7 @@ public class PlayerDameg : MonoBehaviour
 
     IEnumerator Atacnow()
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.1f);
         Atac.enabled = false;
     }
     private void OnCollisionEnter2D(Collision2D other)
