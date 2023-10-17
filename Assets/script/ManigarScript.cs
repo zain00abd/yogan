@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class ManigarScript : MonoBehaviour
 {
-    
-    // Start is called before the first frame update
+    public static ManigarScript Manigar;
+
+    [SerializeField] public Rigidbody2D playerrd;
+    [SerializeField] public Transform player;
     void Start()
     {
-        
+        Manigar = this;
     }
 
     // Update is called once per frame
